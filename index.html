@@ -6,12 +6,7 @@
     <title>HC Mecânica - Funilaria e Pintura em Serra/ES</title>
     <style>
         /* --- Configurações Gerais --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-blue: #2563eb;
             --dark-blue: #1e40af;
@@ -21,7 +16,6 @@
             --light-gray: #f8fafc;
             --white: #ffffff;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -32,506 +26,158 @@
 
         /* --- Navegação --- */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: rgba(30, 64, 175, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
+            padding: 1rem 0; z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-
         nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 0 20px;
         }
-
         .logo {
-            font-size: 1.8em;
-            font-weight: 800;
-            color: white;
+            font-size: 1.8em; font-weight: 800; color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.95em;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        /* Botão Menu Mobile */
-        .mobile-menu-btn {
-            display: none;
-            color: white;
-            font-size: 1.8em;
             cursor: pointer;
-            padding: 5px;
         }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            color: white; text-decoration: none; font-weight: 600;
+            transition: all 0.3s; padding: 8px 16px; border-radius: 8px; font-size: 0.95em;
+        }
+        .nav-links a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+        .mobile-menu-btn { display: none; color: white; font-size: 1.8em; cursor: pointer; padding: 5px; }
 
         /* --- Hero Section --- */
         .hero {
             margin-top: 70px;
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-            color: white;
-            padding: 120px 20px 150px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white; padding: 120px 20px 150px;
+            text-align: center; position: relative; overflow: hidden;
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             animation: wave 20s linear infinite;
         }
-
-        @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            color: #cbd5e1;
-        }
-
+        @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5em; margin-bottom: 20px; line-height: 1.2; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.3em; margin-bottom: 40px; color: #cbd5e1; }
         .cta-button {
             background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            padding: 18px 45px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: white; padding: 18px 45px; border: none; border-radius: 50px;
+            font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); text-transform: uppercase; letter-spacing: 1px;
         }
+        .cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 30px rgba(59, 130, 246, 0.7); }
 
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
-        }
+        /* --- Seções --- */
+        section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5em; margin-bottom: 15px; color: var(--dark-gray); font-weight: 800; }
+        .section-subtitle { text-align: center; font-size: 1.1em; color: var(--gray); margin-bottom: 60px; }
 
-        /* --- Estrutura de Seções --- */
-        section {
-            padding: 80px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            color: var(--dark-gray);
-            font-weight: 800;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1em;
-            color: var(--gray);
-            margin-bottom: 60px;
-        }
-
-        /* --- Sobre Nós --- */
-        #sobre {
-            background: var(--light-gray);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            color: var(--dark-blue);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            color: #475569;
-        }
-
-        .about-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
+        /* --- Sobre --- */
+        #sobre { background: var(--light-gray); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h3 { color: var(--dark-blue); font-size: 1.8em; margin-bottom: 20px; }
+        .about-text p { margin-bottom: 15px; color: #475569; }
+        .about-image { width: 100%; height: 400px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+        .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .about-image:hover img { transform: scale(1.05); }
 
         /* --- Serviços --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .service-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
+            background: white; border-radius: 20px; padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: all 0.3s; border: 1px solid #e2e8f0;
         }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-            border-color: var(--light-blue);
-        }
-
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1); border-color: var(--light-blue); }
         .service-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
+            font-size: 3em; margin-bottom: 20px; display: block;
             background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        .service-card h3 {
-            font-size: 1.5em;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-        }
-
-        .service-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .service-list li {
-            padding: 6px 0;
-            padding-left: 25px;
-            position: relative;
-            color: var(--gray);
-            font-size: 0.95em;
-        }
-
-        .service-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-weight: bold;
-        }
+        .service-card h3 { font-size: 1.5em; color: var(--dark-gray); margin-bottom: 15px; }
+        .service-list { list-style: none; margin-top: 15px; }
+        .service-list li { padding: 6px 0; padding-left: 25px; position: relative; color: var(--gray); font-size: 0.95em; }
+        .service-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary-blue); font-weight: bold; }
 
         /* --- Galeria --- */
-        #galeria {
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            height: 280px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
+        #galeria { background: white; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { height: 280px; border-radius: 15px; overflow: hidden; position: relative; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
         .gallery-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            position: absolute; bottom: 0; left: 0; right: 0;
             background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            color: white;
-            padding: 30px 20px 15px;
-            font-weight: 600;
+            color: white; padding: 30px 20px 15px; font-weight: 600;
         }
 
-        /* --- Chatbot / Orçamento (CSS CORRIGIDO) --- */
-        #orcamento {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: white;
-        }
-
+        /* --- Chatbot Layout --- */
+        #orcamento { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; }
         .orcamento-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
+            max-width: 800px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px; border-radius: 20px; backdrop-filter: blur(15px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
         }
-
-        #chatBot {
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 20px;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            color: #333;
-        }
-
+        #chatBot { background: #ffffff; border-radius: 15px; padding: 20px; height: 550px; display: flex; flex-direction: column; color: #333; }
         #messages {
-            flex: 1;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f1f5f9;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            scroll-behavior: smooth;
+            flex: 1; overflow-y: auto; margin-bottom: 20px; padding: 15px;
+            background: #f1f5f9; border-radius: 12px; display: flex; flex-direction: column; gap: 15px; scroll-behavior: smooth;
         }
-
-        .message {
-            max-width: 85%;
-            padding: 12px 18px;
-            font-size: 0.95em;
-            line-height: 1.5;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .bot-message {
-            background: white;
-            color: var(--dark-gray);
-            border-radius: 18px 18px 18px 2px;
-            align-self: flex-start;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .user-message {
-            background: var(--primary-blue);
-            color: white;
-            border-radius: 18px 18px 2px 18px;
-            align-self: flex-end;
-            box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
-        }
-
-        /* Botões de Opção do Chat */
-        .options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-
+        .message { max-width: 85%; padding: 12px 18px; font-size: 0.95em; line-height: 1.5; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .bot-message { background: white; color: var(--dark-gray); border-radius: 18px 18px 18px 2px; align-self: flex-start; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .user-message { background: var(--primary-blue); color: white; border-radius: 18px 18px 2px 18px; align-self: flex-end; box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2); }
+        
+        .options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 10px; }
         .option-btn {
-            background: white;
-            color: var(--primary-blue);
-            border: 1px solid var(--primary-blue);
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-            font-size: 0.9em;
+            background: white; color: var(--primary-blue); border: 1px solid var(--primary-blue);
+            padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: 600;
+            transition: all 0.2s; font-size: 0.9em;
         }
+        .option-btn:hover { background: var(--primary-blue); color: white; }
+        .whatsapp-btn { background: #25D366 !important; color: white !important; border: none !important; }
 
-        .option-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .whatsapp-btn {
-            background: #25D366 !important;
-            color: white !important;
-            border: none !important;
-        }
-
-        /* --- CSS do Campo de Texto (CORRIGIDO) --- */
-        .input-container {
-            display: flex;
-            gap: 10px;
-            padding-top: 10px;
-            position: relative;
-            z-index: 100; /* Garante que fique acima */
-        }
-
-        .text-input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #2563eb;
-            border-radius: 10px;
-            outline: none;
-            font-size: 16px;
-            background: white;
-            color: #333;
-        }
-        
-        .text-input:focus { 
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); 
-        }
-
-        .send-btn {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 0 25px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        
-        .send-btn:hover {
-            background: #1e40af;
-        }
+        /* Input Chat */
+        .input-container { display: flex; gap: 10px; padding-top: 10px; position: relative; z-index: 100; }
+        .text-input { flex: 1; padding: 12px; border: 2px solid #2563eb; border-radius: 10px; outline: none; font-size: 16px; background: white; color: #333; }
+        .text-input:focus { box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); }
+        .send-btn { background: var(--primary-blue); color: white; border: none; padding: 0 25px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .send-btn:hover { background: #1e40af; }
 
         /* --- Footer --- */
-        footer {
-            background: var(--dark-gray);
-            color: #94a3b8;
-            padding: 60px 20px 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            text-align: left;
-        }
-
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
+        footer { background: var(--dark-gray); color: #94a3b8; padding: 60px 20px 30px; text-align: center; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; text-align: left; }
+        .footer-section h3 { color: white; margin-bottom: 20px; }
         .footer-section p { margin: 10px 0; }
 
-        /* --- Responsividade / Mobile --- */
+        /* --- Mobile --- */
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
+            .mobile-menu-btn { display: block; }
             .nav-links {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--dark-blue);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                display: none; /* Escondido por padrão */
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                position: absolute; top: 70px; left: 0; width: 100%; background: var(--dark-blue);
+                flex-direction: column; padding: 20px; gap: 15px; display: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             }
-
-            .nav-links.active {
-                display: flex; /* Mostra quando ativo */
-            }
-
-            .nav-links a {
-                display: block;
-                text-align: center;
-                background: rgba(255,255,255,0.05);
-            }
-
+            .nav-links.active { display: flex; }
+            .nav-links a { display: block; text-align: center; background: rgba(255,255,255,0.05); }
             .hero h1 { font-size: 2.5em; }
             .about-content { grid-template-columns: 1fr; }
             .about-image { height: 250px; }
             .orcamento-container { padding: 15px; }
-            #chatBot { height: 450px; }
+            #chatBot { height: 500px; }
         }
 
-        /* Animação dos pontinhos (...) */
+        /* Typing Indicator */
         .typing-indicator span {
-            display: inline-block;
-            width: 6px; height: 6px;
-            background: #94a3b8;
-            border-radius: 50%;
-            margin: 0 2px;
-            animation: typing 1s infinite;
+            display: inline-block; width: 6px; height: 6px; background: #94a3b8;
+            border-radius: 50%; margin: 0 2px; animation: typing 1s infinite;
         }
         .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
         .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
@@ -541,7 +187,7 @@
 <body>
     <nav>
         <div class="container">
-            <div class="logo">🚗 HC MECÂNICA</div>
+            <div class="logo" onclick="window.scrollTo(0,0)">🚗 HC MECÂNICA</div>
             <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" onclick="toggleMenu()">Início</a></li>
@@ -648,8 +294,8 @@
 
     <section id="orcamento">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Faça seu Orçamento Online</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Responda rápidas perguntas e receba atendimento prioritário no WhatsApp</p>
+            <h2 class="section-title" style="color: white;">Pré-Orçamento Online</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Responda as perguntas abaixo para adiantar seu atendimento</p>
             <div class="orcamento-container">
                 <div id="chatBot">
                     <div id="messages"></div>
@@ -681,62 +327,84 @@
     </footer>
 
     <script>
-        // --- 1. Menu Mobile ---
+        // --- Menu Mobile ---
         function toggleMenu() {
             const nav = document.getElementById('navLinks');
             nav.classList.toggle('active');
         }
 
-        // --- 2. Lógica do Chatbot Corrigida ---
+        // --- Chatbot Avançado ---
         const messagesContainer = document.getElementById('messages');
         const inputArea = document.getElementById('input-area');
         
-        // Objeto para guardar os dados do usuário
         let userData = {
             interesse: '',
             nome: '',
-            carro: ''
+            carro: '',
+            seguro: '',
+            local_dano: '',
+            descricao: ''
         };
 
-        // Fluxo da conversa
         const botFlow = {
             start: {
-                text: "Olá! Sou o assistente da HC Mecânica. Como posso ajudar você hoje?",
+                text: "Olá! Sou o assistente da HC Mecânica. Vou coletar algumas informações para agilizar seu orçamento. Qual serviço você procura?",
                 options: [
-                    { text: "Orçamento de Pintura/Funilaria", next: "askName", saveVal: "Orçamento Pintura" },
-                    { text: "Polimento e Estética", next: "askName", saveVal: "Polimento" },
-                    { text: "Outros Assuntos", next: "whatsappDirect" }
+                    { text: "Pintura / Funilaria", next: "askName", saveVal: "Funilaria e Pintura" },
+                    { text: "Polimento / Estética", next: "askName", saveVal: "Estética Automotiva" },
+                    { text: "Outros", next: "whatsappDirect" }
                 ]
             },
             askName: {
-                text: "Entendido! Para começar, qual é o seu nome?",
-                input: true,        // Habilita campo de texto
-                saveField: "nome",  // Salva na variável 'nome'
-                next: "askCar"      // Próximo passo
+                text: "Ótimo! Primeiro, qual é o seu nome?",
+                input: true,
+                saveField: "nome",
+                next: "askCar"
             },
             askCar: {
-                text: "Prazer, {nome}! Qual é o modelo e ano do seu carro? (Ex: Onix 2020)",
+                // Pergunta sobre o carro com ênfase na COR
+                text: "Prazer, {nome}! Qual é o <b>Modelo, Ano e a COR</b> do veículo? (Ex: Onix 2020 Prata)",
                 input: true,
-                saveField: "carro", // Salva na variável 'carro'
+                saveField: "carro",
+                next: "askSeguro"
+            },
+            askSeguro: {
+                text: "Certo. O serviço será <b>Particular</b> ou via <b>Seguro</b>?",
+                options: [
+                    { text: "Particular", next: "askLocation", saveVal: "Particular" },
+                    { text: "Acionar Seguro", next: "askLocation", saveVal: "Seguro" },
+                    { text: "Ainda não sei", next: "askLocation", saveVal: "Não definido" }
+                ]
+            },
+            askLocation: {
+                text: "Entendido. <b>Onde está o dano?</b> (Ex: Para-choque dianteiro, Porta do motorista, Teto...)",
+                input: true,
+                saveField: "local_dano",
+                next: "askDescription"
+            },
+            askDescription: {
+                text: "Descreva brevemente o que houve (Ex: Ralado leve, amassado profundo, colisão, pintura queimada).",
+                input: true,
+                saveField: "descricao",
                 next: "askPhotos"
             },
             askPhotos: {
-                text: "Certo, anotei aqui: {carro}. Você tem fotos dos danos ou do que precisa ser feito?",
+                text: "Perfeito, {nome}. Você tem fotos do problema?",
                 options: [
                     { text: "Sim, tenho fotos", next: "finishPhotos" },
                     { text: "Não tenho agora", next: "finishNoPhotos" }
                 ]
             },
             finishPhotos: {
-                text: "Perfeito! Clique abaixo para enviar as fotos e os dados para nossa equipe no WhatsApp.",
+                text: "Excelente! Clique no botão abaixo para me enviar esses dados e as fotos direto no WhatsApp. Já deixei sua ficha pronta.",
                 options: [
-                    { text: "Enviar no WhatsApp 📱", action: "sendWhatsapp" }
+                    { text: "Enviar Ficha e Fotos 📱", action: "sendWhatsapp" }
                 ]
             },
             finishNoPhotos: {
-                text: "Sem problemas! Vamos agendar uma avaliação presencial. Clique abaixo para falar no WhatsApp.",
+                text: "Sem problemas! Clique abaixo para enviar sua ficha no WhatsApp e agendarmos uma avaliação presencial.",
                 options: [
-                    { text: "Agendar Avaliação 📱", action: "sendWhatsapp" }
+                    { text: "Enviar Ficha 📱", action: "sendWhatsapp" }
                 ]
             },
             whatsappDirect: {
@@ -747,17 +415,14 @@
             }
         };
 
-        // Função para adicionar mensagens na tela
         function addMessage(text, type) {
             const div = document.createElement('div');
             div.className = `message ${type}-message`;
-            div.innerHTML = text; // Permite HTML básico se necessário
+            div.innerHTML = text; 
             messagesContainer.appendChild(div);
-            // Rola para baixo automaticamente
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        // Função que mostra o indicador de digitação (...)
         function showTyping() {
             const div = document.createElement('div');
             div.className = 'message bot-message typing-indicator';
@@ -767,28 +432,20 @@
             return div;
         }
 
-        // Função principal que controla os passos
         function renderStep(stepKey) {
             const step = botFlow[stepKey];
-            
-            // 1. Limpa a área de input/botões
             inputArea.innerHTML = ''; 
-
-            // 2. Mostra "digitando..."
             const typing = showTyping();
 
-            // 3. Aguarda um pouco para parecer natural (600ms)
             setTimeout(() => {
-                typing.remove(); // Remove o "digitando..."
+                typing.remove(); 
                 
-                // Processa o texto (substitui {nome} e {carro} pelos valores reais)
                 let finalText = step.text;
                 if (userData.nome) finalText = finalText.replace('{nome}', `<strong>${userData.nome}</strong>`);
                 if (userData.carro) finalText = finalText.replace('{carro}', `<strong>${userData.carro}</strong>`);
                 
                 addMessage(finalText, 'bot');
 
-                // A. Se tiver opções (Botões)
                 if (step.options) {
                     const optionsDiv = document.createElement('div');
                     optionsDiv.className = 'options';
@@ -796,17 +453,19 @@
                     step.options.forEach(opt => {
                         const btn = document.createElement('button');
                         btn.className = 'option-btn';
-                        if(opt.action) btn.classList.add('whatsapp-btn'); // Estilo verde se for WhatsApp
+                        if(opt.action) btn.classList.add('whatsapp-btn');
                         btn.textContent = opt.text;
                         
                         btn.onclick = () => {
-                            // Se o botão tiver um valor para salvar (ex: Interesse)
-                            if (opt.saveVal && stepKey === 'start') userData.interesse = opt.saveVal;
+                            if (opt.saveVal) {
+                                if(stepKey === 'start') userData.interesse = opt.saveVal;
+                                if(stepKey === 'askSeguro') userData.seguro = opt.saveVal;
+                            }
 
                             if (opt.action === 'sendWhatsapp') {
                                 sendToWhatsapp();
                             } else if (opt.action === 'openDirect') {
-                                window.open('https://wa.me/5527999999999', '_blank'); // ALTERE AQUI SEU NUMERO
+                                window.open('https://wa.me/5527999999999', '_blank'); // ALTERE SEU NÚMERO
                             } else {
                                 addMessage(opt.text, 'user');
                                 renderStep(opt.next);
@@ -817,69 +476,60 @@
                     inputArea.appendChild(optionsDiv);
                 }
 
-                // B. Se tiver Input (Campo de Texto)
                 if (step.input) {
                     const container = document.createElement('div');
                     container.className = 'input-container';
-                    
-                    // Cria o HTML do input
                     container.innerHTML = `
                         <input type="text" id="userInput" class="text-input" placeholder="Digite sua resposta..." autocomplete="off">
                         <button id="sendBtn" class="send-btn">Enviar</button>
                     `;
-                    
                     inputArea.appendChild(container);
 
-                    // Pega referências dos elementos criados
                     const inputField = document.getElementById('userInput');
                     const sendButton = document.getElementById('sendBtn');
 
-                    // Função de Enviar
                     const submitInput = () => {
                         const val = inputField.value.trim();
                         if (val !== "") {
-                            // 1. Mostra a mensagem do usuário
                             addMessage(val, 'user');
-                            
-                            // 2. Salva na variável correta (nome ou carro)
-                            if (step.saveField) {
-                                userData[step.saveField] = val;
-                            }
-
-                            // 3. Vai para o próximo passo
+                            if (step.saveField) userData[step.saveField] = val;
                             renderStep(step.next);
                         }
                     };
 
-                    // Eventos de clique e Enter
                     sendButton.onclick = submitInput;
-                    inputField.onkeypress = (e) => {
-                        if (e.key === 'Enter') submitInput();
-                    };
-
-                    // Foca no campo automaticamente (apenas desktop para não abrir teclado no mobile à força)
-                    if (window.innerWidth > 768) {
-                        inputField.focus();
-                    }
+                    inputField.onkeypress = (e) => { if (e.key === 'Enter') submitInput(); };
+                    if (window.innerWidth > 768) inputField.focus();
                 }
-
-            }, 600); // Tempo do delay
+            }, 600); 
         }
 
-        // Função Final: Enviar para WhatsApp
         function sendToWhatsapp() {
-            // --- CONFIGURE SEU NÚMERO AQUI (DDD + NUMERO) ---
+            // --- ATENÇÃO: COLOQUE SEU NÚMERO AQUI ---
             const telefone = "5527999999999"; 
             
-            const text = `Olá! Vim pelo site da HC Mecânica.\n\n*Nome:* ${userData.nome}\n*Carro:* ${userData.carro}\n*Interesse:* ${userData.interesse}`;
+            // Lógica para escolher o Emoji do Serviço
+            let emojiServico = "🔧";
+            if (userData.interesse.includes("Pintura")) emojiServico = "🎨";
+            if (userData.interesse.includes("Estética")) emojiServico = "✨";
+
+            // Montagem da mensagem SEM ASTERISCOS (*)
+            const text = `🆕 NOVO PRÉ-ORÇAMENTO\n` +
+                         `--------------------------------\n` +
+                         `👤 Nome: ${userData.nome}\n` +
+                         `🚗 Veículo e Cor: ${userData.carro}\n` + // Rótulo atualizado
+                         `${emojiServico} Serviço: ${userData.interesse}\n` + // Emoji dinâmico aqui
+                         `💲 Pagamento: ${userData.seguro}\n` +
+                         `📍 Local do Dano: ${userData.local_dano}\n` +
+                         `📝 Descrição: ${userData.descricao}\n` +
+                         `--------------------------------\n` +
+                         `Olá, gostaria de verificar a disponibilidade para avaliação.`;
             
             const url = `https://wa.me/${telefone}?text=${encodeURIComponent(text)}`;
             window.open(url, '_blank');
         }
 
-        // Inicia o Bot
         renderStep('start');
-
     </script>
 </body>
 </html>
