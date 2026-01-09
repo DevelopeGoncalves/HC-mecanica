@@ -45,7 +45,8 @@
             background: rgba(2, 6, 23, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 0; /* Ajuste leve no padding para acomodar a logo */
+            padding: 10px 0;
+            transition: all 0.3s;
         }
         nav .container {
             max-width: 1200px; margin: 0 auto; padding: 0 20px;
@@ -54,12 +55,18 @@
         .logo { 
             cursor: pointer; display: flex; align-items: center; 
         }
-        /* Classe específica para controlar o tamanho da imagem da logo */
+        
         .logo-img {
-            max-height: 50px; /* Altura máxima para não quebrar o menu */
+            max-height: 90px;
             width: auto;
             object-fit: contain;
             display: block;
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); 
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.7));
         }
 
         .nav-links { display: flex; gap: 30px; list-style: none; }
@@ -68,11 +75,11 @@
             transition: 0.3s; border-bottom: 2px solid transparent;
         }
         .nav-links a:hover { color: var(--electric); border-color: var(--electric); }
-        .mobile-menu-btn { display: none; color: white; font-size: 1.6em; cursor: pointer; padding: 5px; }
+        .mobile-menu-btn { display: none; color: white; font-size: 1.8em; cursor: pointer; padding: 5px; }
 
-        /* --- HERO SLIDER (MOBILE OTIMIZADO) --- */
+        /* --- HERO SLIDER --- */
         .hero-slider {
-            position: relative; width: 100%; height: 92dvh; /* Altura dinâmica mobile */
+            position: relative; width: 100%; height: 92dvh;
             background: var(--midnight); overflow: hidden;
         }
         .slide {
@@ -83,7 +90,7 @@
         .slide img {
             width: 100%; height: 100%; object-fit: cover;
             object-position: center;
-            filter: brightness(0.4); /* Escurece para o texto brilhar */
+            filter: brightness(0.4);
             transform: scale(1.0); transition: transform 8s linear;
         }
         .slide.active img { transform: scale(1.1); }
@@ -119,7 +126,6 @@
         .section-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
         .line-detail { width: 60px; height: 4px; background: var(--electric); margin: 20px auto 0; border-radius: 2px; }
 
-        /* --- BARRA DE ESTATÍSTICAS (NOVA) --- */
         .stats-bar {
             background: var(--royal); padding: 40px 20px; margin-top: -5px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -131,19 +137,51 @@
         .stat-item h3 { font-size: 2.5em; color: white; margin-bottom: 5px; }
         .stat-item p { color: rgba(255,255,255,0.7); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- SERVIÇOS (COM FUNDO AZUL) --- */
+        /* --- SERVIÇOS (COM MARCA D'ÁGUA) --- */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        
         .service-card {
             background: var(--glass-light); 
             border: 1px solid rgba(255,255,255,0.05);
             padding: 40px 30px; border-radius: 15px;
-            transition: 0.3s; position: relative; overflow: hidden;
+            transition: all 0.4s ease; /* Transição mais suave */
+            position: relative; overflow: hidden;
+            /* Garante que o conteúdo fique acima da marca d'água */
+            z-index: 1;
         }
+        
+        /* --- TÉCNICA DE MARCA D'ÁGUA --- */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: -30px; /* Posicionada levemente para fora */
+            right: -30px;
+            width: 160px; /* Tamanho grande para destaque */
+            height: 160px;
+            background-image: url('img/logo.png'); /* Usa a sua logo */
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05; /* Transparência baixa para elegância */
+            transform: rotate(-15deg); /* Leve inclinação estilosa */
+            z-index: -1; /* Fica atrás do texto */
+            transition: all 0.5s ease-out;
+            filter: grayscale(100%); /* Deixa monocromático para não brigar com cores */
+        }
+
         .service-card:hover { 
             background: rgba(255,255,255,0.1); 
             transform: translateY(-5px); 
             border-color: var(--electric);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3); /* Sombra mais forte no hover */
         }
+
+        /* Efeito ao passar o mouse: A logo "acende" e se move */
+        .service-card:hover::before {
+            opacity: 0.15; /* Fica mais visível */
+            transform: rotate(0deg) scale(1.1); /* Endireita e cresce */
+            filter: grayscale(0%); /* Recupera um pouco da cor original (azul) */
+        }
+
         .service-icon { 
             font-size: 2.5em; color: var(--electric); margin-bottom: 25px; 
             background: rgba(59, 130, 246, 0.1); width: 70px; height: 70px;
@@ -170,7 +208,7 @@
         .gallery-info h4 { color: white; font-size: 1.1em; }
         .gallery-icon { background: var(--electric); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
 
-        /* --- FAQ (NOVA SEÇÃO) --- */
+        /* --- FAQ --- */
         .faq-item {
             background: var(--glass-light); margin-bottom: 15px; border-radius: 8px; overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
@@ -188,7 +226,7 @@
         .faq-item.active .faq-answer { max-height: 200px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
 
-        /* --- CHATBOT (DESIGN INTEGRADO AO AZUL) --- */
+        /* --- CHATBOT --- */
         #orcamento { background: radial-gradient(circle at center, #1e3a8a 0%, #020617 100%); }
         
         .orcamento-wrapper {
@@ -235,8 +273,12 @@
             .chat-sidebar h3 { font-size: 1.5em; }
             .feature-item { justify-content: center; }
             #chatBot { width: 100%; height: 500px; }
+            
+            .logo-img { max-height: 65px; }
+            nav { padding: 10px 0; }
+            
             .nav-links {
-                position: absolute; top: 70px; /* Ajuste para navbar com logo */
+                position: absolute; top: 90px;
                 left: 0; width: 100%; background: var(--midnight);
                 flex-direction: column; padding: 30px; opacity: 0; pointer-events: none; transition: 0.3s;
                 border-bottom: 1px solid var(--electric);
@@ -471,7 +513,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo" style="margin-bottom: 20px;">
-                        <img src="img/logo.png" alt="HC Mecânica Logo" class="logo-img">
+                        <img src="img/logo.png" alt="HC Mecânica Logo" class="logo-img" style="max-height: 80px;">
                     </div>
                     <p>Qualidade que você vê, confiança que você sente.</p>
                 </div>
@@ -527,7 +569,7 @@
             el.parentElement.classList.toggle('active');
         }
 
-        // --- CÓDIGO ORIGINAL DO CHATBOT ---
+        // --- CÓDIGO CHATBOT ---
         const messagesContainer = document.getElementById('messages');
         const inputArea = document.getElementById('input-area');
         
@@ -703,7 +745,6 @@
         }
 
         function sendToWhatsapp() {
-            // SEU NÚMERO
             const telefone = "5527995202495"; 
             
             let emojiServico = "🔧";
